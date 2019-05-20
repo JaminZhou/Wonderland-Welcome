@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import pop
-import Shimmer
 
 class ViewController: UIViewController {
     
@@ -33,10 +31,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-    }
-    
-    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
-        showSpectialAnimation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -126,7 +120,7 @@ class ViewController: UIViewController {
         }
         
         let numberAnimatin = POPBasicAnimation.easeInEaseOut()!
-        numberAnimatin.property = numProp as! POPAnimatableProperty
+        numberAnimatin.property = numProp as? POPAnimatableProperty
         numberAnimatin.fromValue = 0
         numberAnimatin.toValue = numerical
         numberAnimatin.duration = 2
